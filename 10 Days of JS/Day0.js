@@ -1,29 +1,7 @@
 // Day 0: Hello, World!
 //https://www.hackerrank.com/challenges/js10-hello-world/problem
 
-'use strict';
 
-process.stdin.resume();
-process.stdin.setEncoding('utf-8');
-
-let inputString = '';
-let currentLine = 0;
-
-process.stdin.on('data', inputStdin => {
-    inputString += inputStdin;
-});
-
-process.stdin.on('end', _ => {
-    inputString = inputString.trim().split('\n').map(string => {
-        return string.trim();
-    });
-
-    main();
-});
-
-function readLine() {
-    return inputString[currentLine++];
-}
 
 /**
 *   A line of code that prints "Hello, World!" on a new line is provided in the editor.
@@ -37,8 +15,10 @@ function greeting(parameterVariable) {
     console.log('Hello, World!');
 
     // Write a line of code that prints parameterVariable to stdout using console.log:
-
+    console.log(parameterVariable);
 }
+
+
 
 //______________________________________________________________________________
 
@@ -46,29 +26,7 @@ function greeting(parameterVariable) {
 //Day 0: Data Types
 //https://www.hackerrank.com/challenges/js10-data-types/problem
 
-'use strict';
 
-process.stdin.resume();
-process.stdin.setEncoding('utf-8');
-
-let inputString = '';
-let currentLine = 0;
-
-process.stdin.on('data', inputStdin => {
-    inputString += inputStdin;
-});
-
-process.stdin.on('end', _ => {
-    inputString = inputString.trim().split('\n').map(string => {
-        return string.trim();
-    });
-
-    main();
-});
-
-function readLine() {
-    return inputString[currentLine++];
-}
 
 /**
 *   The variables 'firstInteger', 'firstDecimal', and 'firstString' are declared for you -- do not modify them.
@@ -93,15 +51,14 @@ function performOperation(secondInteger, secondDecimal, secondString) {
     const firstString = 'HackerRank ';
 
     // Write code that uses console.log to print the sum of the 'firstInteger' and 'secondInteger' (converted to a Number        type) on a new line.
-
+    console.log(Number.parseInt(secondInteger) + firstInteger);
 
     // Write code that uses console.log to print the sum of 'firstDecimal' and 'secondDecimal' (converted to a Number            type) on a new line.
-
+    console.log(firstDecimal + Number.parseFloat(secondDecimal));
 
     // Write code that uses console.log to print the concatenation of 'firstString' and 'secondString' on a new line. The        variable 'firstString' must be printed first.
-
+    console.log(firstString.concat(secondString));
 }
-
 
 
 //______________________________________________________________________________

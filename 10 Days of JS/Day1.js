@@ -1,29 +1,7 @@
 //Day 1: Arithmetic Operators
 //https://www.hackerrank.com/challenges/js10-arithmetic-operators/problem
 
-'use strict';
 
-process.stdin.resume();
-process.stdin.setEncoding('utf-8');
-
-let inputString = '';
-let currentLine = 0;
-
-process.stdin.on('data', inputStdin => {
-    inputString += inputStdin;
-});
-
-process.stdin.on('end', _ => {
-    inputString = inputString.trim().split('\n').map(string => {
-        return string.trim();
-    });
-
-    main();
-});
-
-function readLine() {
-    return inputString[currentLine++];
-}
 
 /**
 *   Calculate the area of a rectangle.
@@ -34,10 +12,10 @@ function readLine() {
 *	Return a number denoting the rectangle's area.
 **/
 function getArea(length, width) {
-    let area;
-    // Write your code here
-
-    return area;
+  let area;
+  // Write your code here
+  area = length * width;
+  return area;
 }
 
 /**
@@ -49,43 +27,31 @@ function getArea(length, width) {
 *	Return a number denoting the perimeter of a rectangle.
 **/
 function getPerimeter(length, width) {
-    let perimeter;
-    // Write your code here
-
-    return perimeter;
+  let perimeter;
+  // Write your code here
+  perimeter = 2 * (length + width);
+  return perimeter;
 }
+
 
 
 
 //______________________________________________________________________________
 //Day 1: Functions
 //https://www.hackerrank.com/challenges/js10-function/problem
-'use strict';
 
-process.stdin.resume();
-process.stdin.setEncoding('utf-8');
 
-let inputString = '';
-let currentLine = 0;
-
-process.stdin.on('data', inputStdin => {
-    inputString += inputStdin;
-});
-
-process.stdin.on('end', _ => {
-    inputString = inputString.trim().split('\n').map(string => {
-        return string.trim();
-    });
-
-    main();
-});
-
-function readLine() {
-    return inputString[currentLine++];
-}
 /*
  * Create the function factorial here
  */
+let factorial = (inputNum) => {
+  let product = 1;
+  for (var i = inputNum; i > 0; i--) {
+      product *= i;
+  }
+  return product;
+}
+
 
 
 
@@ -93,35 +59,15 @@ function readLine() {
 //Day 2: Let and Const
 //https://www.hackerrank.com/challenges/js10-let-and-const/problem
 
-'use strict';
 
-process.stdin.resume();
-process.stdin.setEncoding('utf-8');
-
-let inputString = '';
-let currentLine = 0;
-
-process.stdin.on('data', inputStdin => {
-    inputString += inputStdin;
-});
-
-process.stdin.on('end', _ => {
-    inputString = inputString.trim().split('\n').map(string => {
-        return string.trim();
-    });
-
-    main();
-});
-
-function readLine() {
-    return inputString[currentLine++];
-}
 
 function main() {
-    // Write your code here. Read input using 'readLine()' and print output using 'console.log()'.
+  // Write your code here. Read input using 'readLine()' and print output using 'console.log()'.
+  const PI = Math.PI;;
+  const r = readLine();
 
-    // Print the area of the circle:
+  // Print the area of the circle:
+      console.log(PI * Math.pow(r, 2))
 
-    // Print the perimeter of the circle:
-
-    try {
+  // Print the perimeter of the circle:
+      console.log(2 * PI * r)
