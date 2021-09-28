@@ -30,22 +30,49 @@ function readLine() {
  * The function accepts STRING s as parameter.
  */
 
-function timeConversion(s) {
-    let hour = s.slice(0, 2);
-    let min = s.slice(3, 5);
-    let sec = s.slice(6, 8);
+// function timeConversion(s) {
+//     let hour = s.slice(0, 2);
+//     let min = s.slice(3, 5);
+//     let sec = s.slice(6, 8);
 
-    let timeOfDay = s.slice(s.length - 2, s.length);
+//     let timeOfDay = s.slice(s.length - 2, s.length);
 
-    if (timeOfDay === 'AM') {
-        console.log('AM')
-        hour === '12' ? `00:${min}:${sec}` : `${hour}:${min}:${sec}`;
-    } else if (timeOfDay === 'PM') {
-        let alt = `${Number.parseInt(hour)+12}:${min}:${sec}`
-        hour === '12' ? `${hour}:${min}:${sec}` : alt;
-    }
+//     if (timeOfDay === 'AM') {
+//         console.log('AM')
+//         hour === '12' ? `00:${min}:${sec}` : `${hour}:${min}:${sec}`;
+//     } else if (timeOfDay === 'PM') {
+//         let alt = `${Number.parseInt(hour)+12}:${min}:${sec}`
+//         hour === '12' ? `${hour}:${min}:${sec}` : alt;
+//     }
+
+// }
+
+
+function timeConversion(s) { // why doesnt this work as a ternery?
+  let hour = s.slice(0, 2);
+  let min = s.slice(3, 5);
+  let sec = s.slice(6, 8);
+
+  let timeOfDay = s.slice(s.length - 2, s.length);
+
+  if (timeOfDay === 'AM') {
+      if (hour === '12') {
+          return `00:${min}:${sec}`;
+      } else {
+          return `${hour}:${min}:${sec}`;
+      }
+  } else if (timeOfDay === 'PM') {
+      let alt = `${Number.parseInt(hour)+12}:${min}:${sec}`
+      if (hour === '12') {
+          return `${hour}:${min}:${sec}`;
+      } else {
+          return alt;
+      }
+
+  }
 
 }
+
 
 function main() {
     const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
